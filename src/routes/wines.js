@@ -2,8 +2,6 @@ const express = require("express");
 const router = express.Router();
 const Wines = require('../schema/wines')
 
-require("dotenv").config();
-
 router.get("/", async (req, res) => {
   try {
     const response = await Wines.find();

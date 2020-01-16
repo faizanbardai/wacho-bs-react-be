@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
       useFindAndModify: false,
       useCreateIndex: true,
       useUnifiedTopology: true
-    });
+    }).then(console.log("Connected!"));
 
     //Get the default connection
     const db =  mongoose.connection;

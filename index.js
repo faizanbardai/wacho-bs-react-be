@@ -12,7 +12,9 @@ mongoose
     useNewUrlParser: true,
     useFindAndModify: false,
     useCreateIndex: true,
-    // useUnifiedTopology: true
+    useUnifiedTopology: true,
+    keepAlive: true,
+    keepAliveInitialDelay: 300000
   })
   .then(
     () => {

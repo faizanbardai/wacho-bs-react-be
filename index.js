@@ -1,8 +1,16 @@
 const express = require("express");
 const app = express();
-const wines = require("./src/wines");
-
 require("dotenv").config();
+var mongoose = require("mongoose");
+mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useCreateIndex: true,
+    useUnifiedTopology: true
+  }).then(console.log("Connected!"));
+
+const wines = require("./src/routes/wines");
+
 const port = process.env.PORT;
 
 app.get("/", (req, res) => res.send("Server is up and running!"));

@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 require("dotenv").config();
 var mongoose = require("mongoose");
+const WinesModel = require('./src/schema/wines')
 const connectToMongoDB = async () => {
   try {
     mongoose
@@ -17,13 +18,15 @@ const connectToMongoDB = async () => {
   }
 };
 
-const wines = require("./src/routes/wines");
+const winesRoute = require("./src/routes/wines");
 
 const port = process.env.PORT;
 
 app.get("/", (req, res) => res.send("Server is up and running!"));
-app.use("/wines", wines);
-app.listen(port, () => {
-  connectToMongoDB();
+app.use("/wines", winesRoute);
+app.listen(port, async () => {
+  await connectToMongoDB();
+  const response = await WinesModel.find();
+  console.log(response);
   console.log(`Server is listening on port ${port}!`);
 });

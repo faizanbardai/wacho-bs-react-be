@@ -8,7 +8,10 @@ require("dotenv").config();
 
 //Set up default mongoose connection
 mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true
+  useNewUrlParser: true,
+  useFindAndModify: false,
+  useCreateIndex: true,
+  useUnifiedTopology: true,
 });
 
 //Get the default connection
@@ -26,8 +29,12 @@ var WineSchema = new Schema({}, { collection: "wines" });
 const Wines = mongoose.model("wines", WineSchema);
 
 router.get("/", async (req, res) => {
-  const response = await Wines.find();
-  res.send(response);
+  try {
+    const response = await Wines.find();
+    res.send(response);
+  } catch (error) {
+    res.json(error);
+  }
 });
 
 module.exports = router;

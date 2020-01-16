@@ -14,7 +14,8 @@ mongoose
     useCreateIndex: true,
     useUnifiedTopology: true,
     keepAlive: true,
-    keepAliveInitialDelay: 300000
+    keepAliveInitialDelay: 300000,
+    serverSelectionTimeoutMS: 5000
   })
   .then(
     () => {

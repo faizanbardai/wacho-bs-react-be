@@ -1,12 +1,9 @@
 const express = require("express");
 const app = express();
 require("dotenv").config();
-var mongoose = require("mongoose");
-
-const winesRoute = require("./src/routes/winesRoute");
 
 const port = process.env.PORT;
-
+var mongoose = require("mongoose");
 mongoose
   .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
@@ -27,7 +24,6 @@ mongoose
   );
 
 app.get("/", (req, res) => res.send("Server is up and running!"));
-app.use("/wines", winesRoute);
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}!`);
 });

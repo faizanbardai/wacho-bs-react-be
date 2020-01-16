@@ -9,11 +9,24 @@ require("dotenv").config();
 router.get("/", async (req, res) => {
   try {
     //Set up default mongoose connection
+    // https://blog.mlab.com/2014/04/mongodb-driver-mongoose/#Production-ready_connection_settings
     await mongoose.connect(process.env.MONGO_URI, {
       useNewUrlParser: true,
       useFindAndModify: false,
       useCreateIndex: true,
-      useUnifiedTopology: true
+      useUnifiedTopology: true,
+      server : {
+        "socketOptions" : {
+          "keepAlive" : 300000,
+          "connectTimeoutMS" : 30000
+        }
+      },
+      replset : {
+        "socketOptions" : {
+          "keepAlive" : 300000,
+          "connectTimeoutMS" : 30000
+        }
+      }
     });
 
     //Get the default connection

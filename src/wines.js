@@ -9,7 +9,6 @@ require("dotenv").config();
 router.get("/", async (req, res) => {
   try {
     //Set up default mongoose connection
-    // https://blog.mlab.com/2014/04/mongodb-driver-mongoose/#Production-ready_connection_settings
     await mongoose.connect(process.env.MONGO_URI, {
       useNewUrlParser: true,
       useFindAndModify: false,
@@ -17,11 +16,11 @@ router.get("/", async (req, res) => {
       useUnifiedTopology: true
     }).then(console.log("Connected!"));
 
-    //Get the default connection
-    const db =  mongoose.connection;
+    // //Get the default connection
+    // const db =  mongoose.connection;
 
-    //Bind connection to error event (to get notification of connection errors)
-    db.on("error", console.error.bind(console, "MongoDB connection error:"));
+    // //Bind connection to error event (to get notification of connection errors)
+    // db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
     // Define schema
     var Schema = mongoose.Schema;
@@ -32,7 +31,7 @@ router.get("/", async (req, res) => {
     const Wines = mongoose.model("wines", WineSchema);
 
     const response = await Wines.find();
-    res.send(response);
+    res.json(response);
   } catch (error) {
     res.json(error);
   }

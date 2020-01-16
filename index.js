@@ -3,7 +3,7 @@ const app = express();
 require("dotenv").config();
 var mongoose = require("mongoose");
 
-const wines = require("./src/routes/wines");
+const winesRoute = require("./src/routes/winesRoute");
 
 const port = process.env.PORT;
 
@@ -27,7 +27,7 @@ mongoose
   );
 
 app.get("/", (req, res) => res.send("Server is up and running!"));
-app.use("/wines", wines);
+app.use("/wines", winesRoute);
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}!`);
 });

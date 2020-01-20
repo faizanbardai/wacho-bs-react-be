@@ -7,11 +7,11 @@ router.get("/", async (req, res) => {
 });
 
 router.put("/", async (req, res) => {
-  const { id, qty } = req.body;
+  const { id, inventory } = req.body;
   try {
     const response = await productModel.findByIdAndUpdate(
       id,
-      { inventory: qty },
+      { inventory: inventory },
       { new: true }
     );
     res.json(response);

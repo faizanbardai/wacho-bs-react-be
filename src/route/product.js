@@ -3,7 +3,7 @@ const router = express.Router();
 const productModel = require("../model/product");
 
 router.get("/", async (req, res) => {
-  res.send(await productModel.find());
+  res.send(await productModel.find({}, "_id image title inventory"));
 });
 
 router.put("/", async (req, res) => {
@@ -12,7 +12,7 @@ router.put("/", async (req, res) => {
     const response = await productModel.findByIdAndUpdate(
       id,
       { inventory: inventory },
-      { new: true }
+      { new: true, select: "_id image title inventory" }
     );
     res.json(response);
   } catch (error) {

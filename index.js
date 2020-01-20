@@ -1,4 +1,5 @@
 const express = require("express");
+var cors = require("cors");
 const app = express();
 var bodyParser = require("body-parser");
 require("dotenv").config();
@@ -13,7 +14,17 @@ app.get("/", (req, res) => res.send("Server is up and running!"));
 
 app.use(bodyParser.json());
 
-app.use("/products", productRoute);
+var whitelist = ["http://localhost:3000/admin"];
+var corsOptions = {
+  origin: function(origin, callback) {
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  }
+};
+app.use("/products", cors(corsOptions), productRoute);
 
 console.log(listEndpoints(app));
 

@@ -3,7 +3,8 @@ const router = express.Router();
 const multiLingualContent = require("../model/multiLingualContent");
 
 router.get("/", async (req, res) => {
-  res.send(await multiLingualContent.find({lang: req.query.lang}));
+  if(!req.query.lang) req.query.lang = "en"
+  res.send(await multiLingualContent.findOne({lang: req.query.lang}, "content"))
 });
 
 module.exports = router;

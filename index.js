@@ -19,9 +19,10 @@ var whitelist = [
   "http://localhost:3000",
   "http://localhost:3000/en",
   "http://localhost:3000/de",
-  "https://faizanbardai.github.io",
-  "https://faizanbardai.github.io/en",
-  "https://faizanbardai.github.io/de"
+  // "https://faizanbardai.github.io",
+  // "https://faizanbardai.github.io/en",
+  // "https://faizanbardai.github.io/de",
+  "https://faizanbardai.github.io/wacho-bs-react/"
 ];
 var corsOptions = {
   origin: function(origin, callback) {

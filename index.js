@@ -17,6 +17,7 @@ app.use(bodyParser.json());
 
 var whitelist = [
   "http://localhost:3000",
+  "https://faizanbardai.github.io",
   "https://faizanbardai.github.io/wacho-bs-react/"
 ];
 var corsOptions = {

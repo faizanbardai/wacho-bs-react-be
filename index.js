@@ -16,9 +16,12 @@ app.get("/", (req, res) => res.send("Server is up and running!"));
 app.use(bodyParser.json());
 
 var whitelist = [
-  "http://localhost:3000",
+  // "http://localhost:3000",
   "http://localhost:3000/en",
-  "https://faizanbardai.github.io"
+  "http://localhost:3000/de",
+  // "https://faizanbardai.github.io",
+  "https://faizanbardai.github.io/en",
+  "https://faizanbardai.github.io/de"
 ];
 var corsOptions = {
   origin: function(origin, callback) {

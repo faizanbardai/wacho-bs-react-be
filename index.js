@@ -7,6 +7,7 @@ const mongooseConnection = require("./src/db/mongoose");
 const port = process.env.PORT;
 const productRoute = require("./src/route/product");
 const multiLingualContent = require("./src/route/multiLingualContent");
+const purchasesRoute = require("./src/route/purchase");
 const listEndpoints = require("express-list-endpoints");
 
 mongooseConnection();
@@ -27,6 +28,7 @@ var corsOptions = {
 };
 app.use("/products", cors(corsOptions), productRoute);
 app.use("/multiLingualContent", cors(), multiLingualContent);
+app.use("/purchases", cors(corsOptions), purchasesRoute);
 
 console.log(listEndpoints(app));
 

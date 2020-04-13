@@ -2,6 +2,11 @@ const express = require("express");
 const router = express.Router();
 const productModel = require("../model/product");
 
+router.post("/", async (req, res) => {
+  const newWine = await productModel.create(req.body);
+  res.send(newWine);
+});
+
 router.get("/", async (req, res) => {
   res.send(await productModel.find({}));
 });

@@ -8,12 +8,20 @@ var productSchema = new Schema(
     inventory: Number,
     title: String,
     image: String,
+    imageThumbnail: String,
     variety: String,
     color: String,
     aroma: String,
     taste: String,
     alcohol: String,
-    description: String
+    description: String,
+    // New entries
+    active: Boolean,
+    jahrgang: Number,
+    winzer: String,
+    herkunft: String,
+    region: String,
+    rebsorten: String,
   },
   { collection: "wines" }
 );

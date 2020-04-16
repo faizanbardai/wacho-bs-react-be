@@ -16,15 +16,19 @@ app.get("/", (req, res) => res.send("Server is up and running!"));
 
 app.use(bodyParser.json());
 
-var whitelist = ["http://localhost:3000", "https://faizanbardai.github.io"];
+var whitelist = [
+  "http://localhost:3000",
+  "https://faizanbardai.github.io",
+  "goldenesvliesmmm.de",
+];
 var corsOptions = {
-  origin: function(origin, callback) {
+  origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
       callback(null, true);
     } else {
       callback(new Error("Not allowed by CORS"));
     }
-  }
+  },
 };
 app.use("/products", cors(corsOptions), productRoute);
 app.use("/multiLingualContent", cors(), multiLingualContent);

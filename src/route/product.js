@@ -8,7 +8,7 @@ router.post("/", async (req, res) => {
 });
 
 router.get("/", async (req, res) => {
-  res.send(await productModel.find({}));
+  res.send(await productModel.find({ active: true }));
 });
 
 router.put("/", async (req, res) => {

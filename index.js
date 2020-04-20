@@ -1,13 +1,15 @@
 const express = require("express");
-var cors = require("cors");
+const cors = require("cors");
+const passport = require("passport");
 const app = express();
-var bodyParser = require("body-parser");
+const bodyParser = require("body-parser");
 require("dotenv").config();
 const mongooseConnection = require("./src/db/mongoose");
 const port = process.env.PORT;
 const productRoute = require("./src/route/product");
 const multiLingualContent = require("./src/route/multiLingualContent");
 const purchasesRoute = require("./src/route/purchase");
+const adminRoute = require("./src/route/admin");
 const listEndpoints = require("express-list-endpoints");
 
 mongooseConnection();
@@ -15,6 +17,8 @@ mongooseConnection();
 app.get("/", (req, res) => res.send("Server is up and running!"));
 
 app.use(bodyParser.json());
+
+app.use(passport.initialize());
 
 var whitelist = [
   "http://localhost:3000",
@@ -33,6 +37,7 @@ var corsOptions = {
 app.use("/products", cors(corsOptions), productRoute);
 app.use("/multiLingualContent", cors(), multiLingualContent);
 app.use("/purchases", cors(corsOptions), purchasesRoute);
+app.use("/admin", cors(corsOptions), adminRoute);
 
 console.log(listEndpoints(app));
 

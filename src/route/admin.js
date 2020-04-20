@@ -5,7 +5,7 @@ const passport = require("passport");
 const adminModel = require("../model/admin");
 const { getToken } = require("../utils/auth");
 
-router.get(
+router.post(
   "/login",
   [check("username").isEmail().withMessage("A valid email is required!")],
   passport.authenticate("local"),

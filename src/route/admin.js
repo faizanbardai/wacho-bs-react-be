@@ -24,6 +24,16 @@ router.post(
   }
 );
 
+router.get("/refresh-token", passport.authenticate("jwt"), async (req, res) => {
+  const admin = await adminModel.findById(req.user.id);
+  if (admin) {
+    const token = getToken({ _id: admin.id });
+    res.json({ token });
+  } else {
+    res.status(404).send("Admin not found!");
+  }
+});
+
 // Only one admin is needed at the moment.
 // router.post(
 //   "/createAccount",

@@ -1,0 +1,184 @@
+/* https://colorhunt.co/palette/2763 */
+html {
+  scroll-behavior: smooth;
+}
+
+nav {
+  transition: top 0.3s;
+}
+
+body {
+  background-color: #eeeeee;
+  color: #222831;
+}
+
+#about-me,
+#wines,
+#my-team {
+  padding-top: 60px;
+}
+
+.handwritten {
+  font-family: "Indie Flower", cursive;
+  text-shadow: 4px 4px 4px #aaa;
+}
+
+.parallax {
+  /* https://www.w3schools.com/howto/howto_css_parallax.asp */
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.text-light {
+  color: #00adb5 !important;
+}
+
+header {
+  z-index: 1031;
+}
+
+/* video header begins */
+header {
+  position: relative;
+  background-color: black;
+  height: 100vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+header .container {
+  position: relative;
+  z-index: 2;
+}
+
+header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+@media (pointer: coarse) and (hover: none) {
+  header {
+    background: url("img/background-image.jpeg") black no-repeat center center
+      scroll;
+    background-size: cover;
+  }
+
+  header video {
+    display: none;
+  }
+}
+
+/* video header ends */
+
+/* Img Modal Begins */
+/* Style the Image Used to Trigger the Modal */
+.myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.myImg:hover {
+  opacity: 0.7;
+}
+
+/* The Modal (background) */
+.img-modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1032;
+  /* Sit on top */
+  padding-top: 0 px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.img-modal-content {
+  margin: auto;
+  display: block;
+  height: 100%;
+  width: auto;
+}
+
+/* Add Animation - Zoom in the Modal */
+.img-modal-content {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+/* The Close Button */
+.imgClose {
+  position: absolute;
+  z-index: 1022;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.imgClose:hover,
+.imgClose:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+  .img-modal-content {
+    width: 100%;
+  }
+}
+
+/* Img Modal Ends */

@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "./static/css/main.a75e03a5.chunk.css",
+    "main.js": "./static/js/main.4054dfe1.chunk.js",
+    "main.js.map": "./static/js/main.4054dfe1.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.964cbea5.js",
+    "runtime-main.js.map": "./static/js/runtime-main.964cbea5.js.map",
+    "static/css/2.f5298653.chunk.css": "./static/css/2.f5298653.chunk.css",
+    "static/js/2.e103bb74.chunk.js": "./static/js/2.e103bb74.chunk.js",
+    "static/js/2.e103bb74.chunk.js.map": "./static/js/2.e103bb74.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.409f1e925f874921f9c77f00a0525506.js": "./precache-manifest.409f1e925f874921f9c77f00a0525506.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/2.f5298653.chunk.css.map": "./static/css/2.f5298653.chunk.css.map",
+    "static/css/main.a75e03a5.chunk.css.map": "./static/css/main.a75e03a5.chunk.css.map",
+    "static/js/2.e103bb74.chunk.js.LICENSE": "./static/js/2.e103bb74.chunk.js.LICENSE",
+    "static/media/Uncorking soon.jpeg": "./static/media/Uncorking soon.b7c51088.jpeg",
+    "static/media/aboutMeImg.jpg": "./static/media/aboutMeImg.09f4b4ec.jpg",
+    "static/media/header-loop.mp4": "./static/media/header-loop.f3bd3584.mp4",
+    "static/media/myDreamImg.jpg": "./static/media/myDreamImg.ad029bf8.jpg",
+    "static/media/philosophy.jpg": "./static/media/philosophy.fa68be64.jpg",
+    "static/media/sociology.jpg": "./static/media/sociology.d71a8e1e.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.964cbea5.js",
+    "static/css/2.f5298653.chunk.css",
+    "static/js/2.e103bb74.chunk.js",
+    "static/css/main.a75e03a5.chunk.css",
+    "static/js/main.4054dfe1.chunk.js"
+  ]
+}

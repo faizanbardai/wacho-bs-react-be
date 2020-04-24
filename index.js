@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const cors = require("cors");
 const passport = require("passport");
 const app = express();
@@ -13,8 +14,10 @@ const adminRoute = require("./src/route/admin");
 const listEndpoints = require("express-list-endpoints");
 
 mongooseConnection();
-
-app.get("/", (req, res) => res.send("Server is up and running!"));
+app.use(express.static(path.join(__dirname, "build")));
+app.get("/", (req, res) =>
+  res.sendFile(path.join(__dirname, "build", "index.html"))
+);
 
 app.use(bodyParser.json());
 

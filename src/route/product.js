@@ -31,4 +31,27 @@ router.put("/", passport.authenticate("jwt"), async (req, res) => {
   }
 });
 
+router.put("/active", passport.authenticate("jwt"), async (req, res) => {
+  const { _id } = req.body;
+  try {
+    const product = await productModel.findById(_id);
+    await productModel.findByIdAndUpdate(_id, {
+      active: product.active ? false : true,
+    });
+    res.json("Product status changed.");
+  } catch (error) {
+    res.json(error);
+  }
+});
+
+router.delete("/", passport.authenticate("jwt"), async (req, res) => {
+  const { _id } = req.body;
+  try {
+    const productDeleted = await productModel.findByIdAndDelete(_id);
+    productDeleted ? res.json("Deleted!") : res.status(404).json();
+  } catch (error) {
+    res.json(error);
+  }
+});
+
 module.exports = router;

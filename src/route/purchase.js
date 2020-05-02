@@ -4,7 +4,7 @@ const purchaseModel = require("../model/purchase");
 const productModel = require("../model/product");
 
 router.get("/", async (req, res) => {
-  res.send(await purchaseModel.find({}));
+  res.send(await purchaseModel.find().sort({ createdAt: -1 }));
 });
 
 router.post("/", async (req, res) => {
@@ -15,12 +15,12 @@ router.post("/", async (req, res) => {
       orderID,
       products,
       totalAmount,
-      captureDetail
+      captureDetail,
     });
     //Updating products inventory
-    products.forEach(async product => {
+    products.forEach(async (product) => {
       await productModel.findByIdAndUpdate(product._id, {
-        $inc: { inventory: -1 * parseInt(product.qty) }
+        $inc: { inventory: -1 * parseInt(product.qty) },
       });
     });
     res.json(response);

@@ -4,23 +4,23 @@ var Schema = mongoose.Schema;
 var productSchema = new Schema(
   {
     price: Number,
-    qty: Number,
+    qty: { type: Number, default: 0 },
     inventory: Number,
     title: String,
     image: String,
+    description: String,
     // variety: String,
     // color: String,
     // aroma: String,
     // taste: String,
-    alkoholgehalt: String,
-    description: String,
     // New entries
-    active: Boolean,
+    active: { type: Boolean, default: false },
     jahrgang: Number,
     winzer: String,
     herkunft: String,
     region: String,
     rebsorten: String,
+    alkoholgehalt: String,
   },
   { collection: "wines" }
 );

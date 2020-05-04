@@ -25,7 +25,7 @@ app.use(passport.initialize());
 
 var whitelist = [
   "http://localhost:3003",
-  "https://wacho-bs-react-be.herokuapp.com/",
+  "https://wacho-bs-react-be.herokuapp.com",
   "goldenesvliesmmm.de",
 ];
 var corsOptions = {

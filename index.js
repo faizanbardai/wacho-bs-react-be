@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 app.use(passport.initialize());
 
 var whitelist = [
-  "http://localhost:3000",
+  "http://localhost:3003",
   "https://faizanbardai.github.io",
   "goldenesvliesmmm.de",
 ];

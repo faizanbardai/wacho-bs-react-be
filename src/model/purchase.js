@@ -6,7 +6,10 @@ var purchaseSchema = new Schema(
     orderID: String,
     products: [],
     totalAmount: Number,
-    captureDetail: Schema.Types.Mixed
+    payer: String,
+    deliveryAddress: Object,
+    captureDetail: Schema.Types.Mixed,
+    transactionCode: String,
   },
   { timestamps: true, collection: "purchases" }
 );

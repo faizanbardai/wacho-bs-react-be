@@ -4,11 +4,26 @@ const purchaseModel = require("../model/purchase");
 const productModel = require("../model/product");
 
 router.get("/", async (req, res) => {
-  res.send(await purchaseModel.find().sort({ createdAt: -1 }));
+  res.send(
+    await purchaseModel
+      .find()
+      .select(
+        "products _id orderID totalAmount payer deliveryAddress transactionCode createdAt"
+      )
+      .sort({ createdAt: -1 })
+  );
 });
 
 router.post("/", async (req, res) => {
-  const { orderID, products, totalAmount, captureDetail } = req.body;
+  const {
+    orderID,
+    products,
+    totalAmount,
+    captureDetail,
+    payer,
+    deliveryAddress,
+    transactionCode,
+  } = req.body;
   try {
     //Updating purchase registry
     const response = await purchaseModel.create({
@@ -16,6 +31,9 @@ router.post("/", async (req, res) => {
       products,
       totalAmount,
       captureDetail,
+      payer,
+      deliveryAddress,
+      transactionCode,
     });
     //Updating products inventory
     products.forEach(async (product) => {

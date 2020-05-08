@@ -29,6 +29,8 @@ var whitelist = [
   "https://wacho-bs-react-be.herokuapp.com",
   "www.goldenesvliesmmm.de",
   "goldenesvliesmmm.de",
+  "http://goldenesvliesmmm.de",
+  "http://www.goldenesvliesmmm.de",
 ];
 var corsOptions = {
   origin: function (origin, callback) {

@@ -27,6 +27,7 @@ var whitelist = [
   "http://localhost:3000",
   "http://localhost:3003",
   "https://wacho-bs-react-be.herokuapp.com",
+  "www.goldenesvliesmmm.de",
   "goldenesvliesmmm.de",
 ];
 var corsOptions = {

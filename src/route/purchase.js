@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
+const passport = require("passport");
 const purchaseModel = require("../model/purchase");
 const productModel = require("../model/product");
 
-router.get("/", async (req, res) => {
+router.get("/", passport.authenticate("jwt"), async (req, res) => {
   res.send(
     await purchaseModel
       .find()

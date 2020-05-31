@@ -18,6 +18,15 @@ app.use(express.static(path.join(__dirname, "build")));
 app.get("/", (req, res) =>
   res.sendFile(path.join(__dirname, "build", "index.html"))
 );
+app.get("/en", (req, res) =>
+  res.sendFile(path.join(__dirname, "build", "index.html"))
+);
+app.get("/de", (req, res) =>
+  res.sendFile(path.join(__dirname, "build", "index.html"))
+);
+app.get("/admin", (req, res) =>
+  res.sendFile(path.join(__dirname, "build", "index.html"))
+);
 
 app.use(bodyParser.json());
 

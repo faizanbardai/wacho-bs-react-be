@@ -36,16 +36,26 @@ var whitelist = [
   "http://localhost:3000",
   "http://localhost:3003",
   "https://wacho-bs-react-be.herokuapp.com",
+
   "www.goldenesvliesmmm.de",
+  "www.winesandcolors.de",
+
   "goldenesvliesmmm.de",
+  "winesandcolors.de",
 
   //not secure
   "http://goldenesvliesmmm.de",
   "http://www.goldenesvliesmmm.de",
 
+  "http://winesandcolors.de",
+  "http://www.winesandcolors.de",
+
   //secure
   "https://goldenesvliesmmm.de",
   "https://www.goldenesvliesmmm.de",
+
+  "https://winesandcolors.de",
+  "https://www.winesandcolors.de",
 ];
 var corsOptions = {
   origin: function (origin, callback) {

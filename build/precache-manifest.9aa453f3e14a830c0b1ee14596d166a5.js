@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a3557501602559c4175573dee3d8a3ae",
+    "revision": "3dca0c0b23abd696dc915d7925dd6f67",
     "url": "./index.html"
   },
   {
-    "revision": "20fd48922c93e39d272e",
+    "revision": "307b3328d066a8b8d628",
     "url": "./static/css/2.f5298653.chunk.css"
   },
   {
-    "revision": "7ac07713127bbcf40569",
+    "revision": "1e714c2109ab620d0001",
     "url": "./static/css/main.a75e03a5.chunk.css"
   },
   {
-    "revision": "20fd48922c93e39d272e",
-    "url": "./static/js/2.c65c534c.chunk.js"
+    "revision": "307b3328d066a8b8d628",
+    "url": "./static/js/2.8fb25948.chunk.js"
   },
   {
     "revision": "4e4ac0e89342aa85e94f0ca8a4cb9525",
-    "url": "./static/js/2.c65c534c.chunk.js.LICENSE"
+    "url": "./static/js/2.8fb25948.chunk.js.LICENSE"
   },
   {
-    "revision": "7ac07713127bbcf40569",
-    "url": "./static/js/main.882f531e.chunk.js"
+    "revision": "1e714c2109ab620d0001",
+    "url": "./static/js/main.6181618c.chunk.js"
   },
   {
     "revision": "2583fe6fe0f5dd86adf0",
@@ -50,5 +50,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "d71a8e1e1199d7376392aa00e12a104e",
     "url": "./static/media/sociology.d71a8e1e.jpg"
+  },
+  {
+    "revision": "77a8ca399d6b09f3f6f6cc563c1d0d73",
+    "url": "./static/media/yourRightsImg.77a8ca39.jpg"
   }
 ]);

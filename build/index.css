@@ -12,10 +12,13 @@ body {
   color: #222831;
 }
 
-#about-me,
+#about-me {
+  padding-top: 80px;
+}
 #wines,
-#my-team {
-  padding-top: 60px;
+#my-team,
+#contact {
+  padding-top: 64px;
 }
 
 .handwritten {

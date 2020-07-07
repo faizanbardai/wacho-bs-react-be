@@ -11,10 +11,11 @@ body {
   background-color: #eeeeee;
   color: #222831;
 }
-
-#about-me {
+#bannarText {
   padding-top: 80px;
 }
+
+#about-me,
 #wines,
 #my-team,
 #contact {

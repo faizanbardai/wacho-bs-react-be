@@ -1,19 +1,19 @@
-var mongoose = require("mongoose");
-var Schema = mongoose.Schema;
+const express = require("express");
+const router = express.Router();
+const passport = require("passport");
+const artModel = require("../model/art");
 
-var artSchema = new Schema(
-  {
-    src: String,
-    thumbnail: String,
-    thumbnailWidth: Number,
-    thumbnailHeight: Number,
-    caption: String,
-    tags: Object,
-    price: Number,
-  },
-  { collection: "art" }
-);
+router.get("/", async (req, res) => {
+  res.send(
+    await artModel
+      .find(req.query.active == 1 ? { active: true } : null)
+      .select("src thumbnail thumbnailWidth thumbnailHeight caption tags")
+  );
+});
 
-const productModel = mongoose.model("wines", productSchema);
+router.post("/", passport.authenticate("jwt"), async (req, res) => {
+  const newArt = await artModel.create(req.body);
+  res.send(newArt);
+});
 
-module.exports = productModel;
+module.exports = router;

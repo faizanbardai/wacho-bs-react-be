@@ -8,6 +8,7 @@ require("dotenv").config();
 const mongooseConnection = require("./src/db/mongoose");
 const port = process.env.PORT;
 const productRoute = require("./src/route/product");
+const artRoute = require("./src/route/art");
 const multiLingualContent = require("./src/route/multiLingualContent");
 const purchasesRoute = require("./src/route/purchase");
 const adminRoute = require("./src/route/admin");
@@ -67,6 +68,7 @@ var corsOptions = {
   },
 };
 app.use("/products", cors(corsOptions), productRoute);
+app.use("/art", cors(corsOptions), artRoute);
 app.use("/multiLingualContent", cors(), multiLingualContent);
 app.use("/purchases", cors(corsOptions), purchasesRoute);
 app.use("/admin", cors(corsOptions), adminRoute);

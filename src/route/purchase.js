@@ -3,6 +3,7 @@ const router = express.Router();
 const passport = require("passport");
 const purchaseModel = require("../model/purchase");
 const productModel = require("../model/product");
+const artModel = require("../model/art");
 
 router.get("/", passport.authenticate("jwt"), async (req, res) => {
   res.send(
@@ -38,9 +39,18 @@ router.post("/", async (req, res) => {
     });
     //Updating products inventory
     products.forEach(async (product) => {
-      await productModel.findByIdAndUpdate(product._id, {
-        $inc: { inventory: -1 * parseInt(product.qty) },
-      });
+      const type = product.sku.split("-")[0];
+      const _id = product.sku.split("-")[1];
+      // Setting art inactive
+      if (type === "art") {
+        await artModel.findByIdAndUpdate(_id, { active: false });
+      }
+      // Reducing wine inventory by quantity sold
+      if (type === "wine") {
+        await productModel.findByIdAndUpdate(_id, {
+          $inc: { inventory: -1 * parseInt(product.quantity) },
+        });
+      }
     });
     res.json(response);
   } catch (error) {

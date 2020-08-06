@@ -12,7 +12,7 @@ var artSchema = new Schema(
     price: Number,
     active: { type: Boolean, default: true },
   },
-  { collection: "art" }
+  { timestamps: true, collection: "art" }
 );
 
 const productModel = mongoose.model("art", artSchema);

@@ -17,6 +17,7 @@ body {
 
 #about-me,
 #wines,
+#art,
 #my-team,
 #contact {
   padding-top: 64px;
@@ -24,7 +25,9 @@ body {
 
 .handwritten {
   font-family: "Indie Flower", cursive;
-  text-shadow: 4px 4px 4px #aaa;
+  font-size: 40px;
+  /* Shadow removed on client request */
+  /* text-shadow: 4px 4px 4px #aaa; */
 }
 
 .parallax {

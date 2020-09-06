@@ -8,7 +8,7 @@ var artSchema = new Schema(
     thumbnailWidth: Number,
     thumbnailHeight: Number,
     caption: String,
-    tags: [],
+    artist: String,
     price: Number,
     active: { type: Boolean, default: true },
   },

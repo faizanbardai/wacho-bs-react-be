@@ -29,4 +29,9 @@ router.put("/sold", async (req, res) => {
   res.send(soldArt);
 });
 
+router.put("/",passport.authenticate("jwt"), async(req, res)=>{
+  const updatedArt = await artModel.findByIdAndUpdate(req.query.id,req.body, {new: true});
+  res.send(updatedArt);
+})
+
 module.exports = router;

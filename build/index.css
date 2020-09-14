@@ -88,7 +88,7 @@ header .overlay {
   z-index: 1;
 }
 
-@media (pointer: coarse) and (hover: none) {
+/* @media (pointer: coarse) and (hover: none) {
   header {
     background: url("img/background-image.jpeg") black no-repeat center center
       scroll;
@@ -98,7 +98,7 @@ header .overlay {
   header video {
     display: none;
   }
-}
+} */
 
 /* video header ends */
 

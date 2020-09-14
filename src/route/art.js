@@ -5,7 +5,7 @@ const artModel = require("../model/art");
 
 router.get("/", async (req, res) => {
   res.send(
-    await artModel.find(req.query.active == 1 ? { active: true } : null)
+    await artModel.find(req.query.active == 1 ? { active: true } : null).sort([['updatedAt', -1]])
   );
 });
 

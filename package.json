@@ -18,7 +18,7 @@
     "express-list-endpoints": "^4.0.1",
     "express-validator": "^6.6.0",
     "mongoose": "^5.9.26",
-    "nodemon": "^2.0.4",
+    "nodemon": "^2.0.20",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.1",
     "passport-local": "^1.0.0",
